@@ -6,6 +6,7 @@
   <script type="text/javascript" src="js/hidebib.js"></script>
   <title>Yuan Xu</title>
   <meta name="Yuan Xu's Homepage"http-equiv="Content-Type" content="Yuan Xu's Homepage">
+
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
@@ -15,14 +16,11 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-41102261-2', 'auto');
     ga('send', 'pageview');
-
-ga('create', 'UA-41102261-2', 'auto');
-ga('send', 'pageview');
 </script>
 </head>
 
 <body>
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -31,10 +29,10 @@ ga('send', 'pageview');
               <p style="text-align:center">
                 <name>Yuan Xu (许苑)</name>
               </p>
-              <p>I'm a senior undergraduate student in Computer Science at <a href="http://cfcs.pku.edu.cn/", target="_blank">CFCS</a>, Peking University. I'm a member of the <a href="http://cfcs.pku.edu.cn/research/research_labs/238405.htm", target="_blank">Computer Vision and Digital Art group</a>, advised by <a href="https://cfcs.pku.edu.cn/english/people/faculty/yizhouwang/index.htm", target="_blank">Prof. Yizhou Wang</a>. 
+              <p>I'm a senior undergraduate student in Computer Science at Peking University. I'm a member of the <a href="http://cfcs.pku.edu.cn/research/research_labs/238405.htm", target="_blank">Computer Vision and Digital Art group</a>, advised by <a href="https://cfcs.pku.edu.cn/english/people/faculty/yizhouwang/index.htm", target="_blank">Prof. Yizhou Wang</a>. 
               </p>
               <p style="text-align:center">
-                <a href="mailto:xuyuan@stu.pku.edu.cn">Email</a> &nbsp/&nbsp
+                <a href="xuyuan@stu.pku.edu.cn">Email</a> &nbsp/&nbsp
                 <!-- <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp -->
                 <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp -->
                 <a href="https://scholar.google.com/citations?user=mjP_5SEAAAAJ&hl=en", target="_blank">Google Scholar</a> &nbsp/&nbsp
@@ -43,7 +41,7 @@ ga('send', 'pageview');
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/me/xy.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/me/xy.jpg" class="hoverZoomLink"></a>
+              <a href="images/me/xy.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/me/xy.png" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -72,16 +70,17 @@ ga('send', 'pageview');
               <br>
               <em>CVPR</em>, 2024
               <br></p>
-              <div class="paper" id="MotionBERT">
+              <div class="paper" id="Scoring">
+                <!--
                 <a href="javascript:toggleblock('MotionBERT_abs')">abstract</a> /
                 <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhu_MotionBERT_A_Unified_Perspective_on_Learning_Human_Motion_Representations_ICCV_2023_paper.pdf", target="_blank">paper</a> /
                 <a href="https://arxiv.org/abs/2210.06551.pdf", target="_blank">arixv</a> /
                 <a href="https://github.com/Walter0807/MotionBERT/", target="_blank">code</a> /
                 <a href="https://motionbert.github.io/", target="_blank">project page</a> /
                 <a shape="rect" href="javascript:togglebib('MotionBERT')" class="togglebib">bibtex</a>
-		      
-                <p align="justify"> <i id="MotionBERT_abs">Monocular 3D human mesh estimation is an ill-posed problem, characterized by inherent ambiguity and occlusion. While recent probabilistic methods propose generating multiple solutions, little attention is paid to obtaining high-quality estimates from them. To address this limitation, we introduce a versatile framework by first leveraging our novel \textbf{HypoNet} to generate multiple hypotheses, followed by employing a meticulously designed scorer, \textbf{ScoreNet}, to evaluate and select high-quality estimates. Our framework formulates the estimation process as a reverse denoising process, where HypoNet produces a diverse set of plausible estimates that effectively align with the image cues. Subsequently, ScoreNet is employed to rigorously evaluate and rank these estimates based on their quality and finally identify superior ones. Experimental results demonstrate that HypoNet outperforms existing state-of-the-art probabilistic methods as a multi-hypothesis mesh estimator. Moreover, the estimates selected by ScoreNet significantly outperform random generation or simple averaging. Notably, the trained ScoreNet exhibits generalizability, as it can effectively score existing methods and significantly reduce their errors by more than 16mm. Code and models will be publicly released. </p>
-                <!-- <pre xml:space="preserve">@InProceedings{Zhu_2023_ICCV,
+                -->
+                <p align="justify"> <i id="Scoring_abs">Monocular 3D human mesh estimation is an ill-posed problem, characterized by inherent ambiguity and occlusion. While recent probabilistic methods propose generating multiple solutions, little attention is paid to obtaining high-quality estimates from them. To address this limitation, we introduce a versatile framework by first leveraging our novel \textbf{HypoNet} to generate multiple hypotheses, followed by employing a meticulously designed scorer, \textbf{ScoreNet}, to evaluate and select high-quality estimates. Our framework formulates the estimation process as a reverse denoising process, where HypoNet produces a diverse set of plausible estimates that effectively align with the image cues. Subsequently, ScoreNet is employed to rigorously evaluate and rank these estimates based on their quality and finally identify superior ones. Experimental results demonstrate that HypoNet outperforms existing state-of-the-art probabilistic methods as a multi-hypothesis mesh estimator. Moreover, the estimates selected by ScoreNet significantly outperform random generation or simple averaging. Notably, the trained ScoreNet exhibits generalizability, as it can effectively score existing methods and significantly reduce their errors by more than 16mm. Code and models will be publicly released. </p>
+                <!--<pre xml:space="preserve">@InProceedings{Zhu_2023_ICCV,
     author    = {Zhu, Wentao and Ma, Xiaoxuan and Liu, Zhaoyang and Liu, Libin and Wu, Wayne and Wang, Yizhou},
     title     = {MotionBERT: A Unified Perspective on Learning Human Motion Representations},
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
@@ -91,14 +90,22 @@ ga('send', 'pageview');
 }</pre> -->
                 <p>
                   Our framework, featuring HypoNet and ScoreNet, advances monocular 3D human mesh estimation by generating multiple hypotheses with HypoNet and selecting the most accurate estimates using ScoreNet, efficiently tackling inherent ambiguities in the task.
+                </p>
               </div>
             </td>
           </tr>  
+          
 
         </table>
 
 
         <!-- Education -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr><td>
+            <h2>Education</h2>
+          </td></tr>
+        </table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
           <tr>
             <td style="padding:10px;width:25%;vertical-align:middle">
               <img src="images/me/pku.png" alt="eth" width="80" height="80">
@@ -131,9 +138,11 @@ ga('send', 'pageview');
 <script xml:space="preserve" language="JavaScript">
 hideallbibs();
 </script>
+
 <script xml:space="preserve" language="JavaScript">
-hideblock('MotionBERT_abs');
+hideblock('Scoring_abs');
 </script>
+
 </body>
 
 </html>
