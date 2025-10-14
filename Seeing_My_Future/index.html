@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality</h1>
+            <p class="paper-id" style="text-align: center; margin-bottom: 0; font-size: 1.1em;">
+                <a href="https://xy02-05.github.io/" target="_blank">Yuan Xu</a><sup>1*</sup>, 
+                Zimu Zhang<sup>1*</sup>, 
+                <a href="https://shirleymaxx.github.io/" target="_blank">Xiaoxuan Ma</a><sup>1</sup>, 
+                <a href="https://wentao.live/" target="_blank">Wentao Zhu</a><sup>2</sup>, 
+                <a href="http://www.pami.sjtu.edu.cn/yuqiao" target="_blank">Yu Qiao</a><sup>3</sup>, 
+                <a href="https://cfcs.pku.edu.cn/english/people/faculty/yizhouwang/index.htm" target="_blank">Yizhou Wang</a><sup>1</sup>
+            </p>
+            <p class="paper-affiliation" style="text-align: center; font-size: 1.05em; margin-top: 8px; margin-bottom: 0;">
+                <sup>1</sup>Peking University &nbsp; 
+                <sup>2</sup>Eastern Institute of Technology, Ningbo &nbsp;
+                <sup>3</sup>Shanghai Jiao Tong University
+            </p>
+        </header>
+
+        <div class="links-container" style="text-align: center; margin-top: -5px; margin-bottom: 38px;">
+            <a href="https://arxiv.org/pdf/2510.10742" target="_blank" style="font-size: 1.05em; color: #3498db; margin: 0 15px; text-decoration: none; transition: color 0.3s ease;">
+                <strong>[Paper]</strong>
+            </a>
+            <span style="font-size: 1.05em; color: #aaa; margin: 0 15px;">
+                [Code(coming soon)]
+            </span>
+            <a href="https://youtu.be/F6nlxRoq1W8" target="_blank" style="font-size: 1.05em; color: #3498db; margin: 0 15px; text-decoration: none; transition: color 0.3s ease;">
+                <strong>[Video]</strong>
+            </a>
+        </div>
+
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <p>Virtual and augmented reality systems increasingly demand intelligent adaptation to user behaviors for enhanced interaction experiences. Achieving this requires accurately understanding human intentions and predicting future situated behaviors—such as gaze direction and object interactions—which is vital for creating responsive VR/AR environments and applications like personalized assistants. However, accurate behavioral prediction demands modeling the underlying cognitive processes that drive human-environment interactions. In this work, we introduce a hierarchical, intention-aware framework that models human intentions and predicts detailed situated behaviors by leveraging cognitive mechanisms. Given historical human dynamics and the observation of scene contexts, our framework first identifies potential interaction targets and forecasts fine-grained future behaviors. We propose a dynamic Graph Convolutional Network (GCN) to effectively capture human-environment relationships. Extensive experiments on challenging real-world benchmarks and live VR environment demonstrate the effectiveness of our approach, achieving superior performance across all metrics and enabling practical applications for proactive VR systems that anticipate user behaviors and adapt virtual environments accordingly.</p>
+        </section>
+
+        <section class="pipeline">
+            <h2>Method Overview</h2>
+            <figure>
+                <img src="images/pipeline.png" alt="Method Pipeline" class="pipeline-image">
+                <figcaption class="text-left">
+                    <strong>Overview of our framework.</strong> (1) an observation encoding module that captures and encodes historical human states and scene context, (2) a hierarchical intention-aware decoding module that first predicts potential top K interaction targets and then forecasts detailed human next states as well as the object interactions, and (3) a dynamic GCN that adaptively models relationships among human gaze, head positions, hand positions, and objects.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="results">
+            <h2>Real World Experiment Results</h2>
+            <div class="video-grid">
+                <p class="video-caption">
+                    <strong>Real world experiments results.</strong> We present three different perspectives: an exocentric view, an egocentric view from the VR device, and the corresponding rendering result in Blender. In Blender, we use a <span style="color: #ffc92d">yellow</span> Lego figure to represent the ground truth and a <span style="color: #8fbbf6">blue</span> Lego figure for our prediction results. Simultaneously, the color of an object's bounding box represents the probability value output by our model. A color closer to <span style="color: #00ff00">green</span> indicates a higher probability that the model believes the object will be interacted with next. Conversely, a color closer to white indicates a lower probability of interaction.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos1.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos2.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos3.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos4.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos5.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2>Qualitative Video Results</h2>
+            <div class="video-grid">
+                <p class="video-caption">
+                    <strong>Qualitative results of our model on the ADT dataset.</strong> The visualization includes: (top-left) an egocentric RGB view for reference, (top-right) 3D visualization of interaction scenario, (bottom) wireframe representation of the environment with ground-truth and our predictions on human states and the interacted object states. Visual elements include human gaze direction (rays), human head position and orientation (pyramids), human hand positions (points), and the interacted objects (bounding boxes). <span style="color: #c04842">Red</span> elements represent the input and ground-truth, and <span style="color: #3b852b">green</span> bounding boxes represent the ground truth object interaction trajectory, while <span style="color: #4fadea">blue</span> elements and <span style="color: #4fadea">blue</span> bounding boxes represent the corresponding predictions. White bounding boxes indicate the top K objects selected by our interaction intention prediction module.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video1.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In the input clip, the subject's gaze sweeps over the coffee cup on the round stool while bending down and reaching for it. Our model can recognize and understand the subject's intention, identify the coffee cup as the next active object, and predict object motion trajectories similar to the ground truth.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video2.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In this example, there is a wide array of objects available on the table in front of the subject.  In the input clip, the subject is holding a wooden spoon in his right hand, and his left hand is approaching a bowl on the table, with accompanying eye gaze. Our model can accurately predict from the numerous objects that the wooden spoon in the right hand will remain in interaction, and simultaneously, the black bowl will become interactive next.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video3.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In the input clip, the subject's gaze is fixed at the drink on the table, and the trajectories of their head and hand are moving towards the drink. These cues effectively address the questions of 'where to look', 'where to go', and 'which object to interact with'. Based on this information, our model successfully understands the subject's intention and accurately predicts both the next active object and trajectories that closely align with the ground truth.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video4.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In this example, the subject performs the action of drinking water.  Instead of merely following the motion trend of the coffee cup within the input, our model understands the human drinking action pattern: "pick up then put down." Consequently, it correctly predicts the coffee cup's future motion.
+                </p>
+            </div>
+        </section>
+
+        <section class="citation">
+            <h2>Citation</h2>
+            <div class="citation-container">
+                <pre id="bibtex">@misc{xu2025seeingfuturepredictingsituated,
+    title={Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality}, 
+    author={Yuan Xu and Zimu Zhang and Xiaoxuan Ma and Wentao Zhu and Yu Qiao and Yizhou Wang},
+    year={2025},
+    eprint={2510.10742},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2510.10742}, 
+}</pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
