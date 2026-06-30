@@ -10,36 +10,11 @@
     <div class="container">
         <header>
             <h1>Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality</h1>
-            <p class="paper-id" style="text-align: center; margin-bottom: 0; font-size: 1.1em;">
-                <a href="https://xy02-05.github.io/" target="_blank">Yuan Xu</a><sup>1*</sup>, 
-                Zimu Zhang<sup>1*</sup>, 
-                <a href="https://shirleymaxx.github.io/" target="_blank">Xiaoxuan Ma</a><sup>1</sup>, 
-                <a href="https://wentao.live/" target="_blank">Wentao Zhu</a><sup>2</sup>, 
-                <a href="http://www.pami.sjtu.edu.cn/yuqiao" target="_blank">Yu Qiao</a><sup>3</sup>, 
-                <a href="https://cfcs.pku.edu.cn/english/people/faculty/yizhouwang/index.htm" target="_blank">Yizhou Wang</a><sup>1</sup>
-            </p>
-            <p class="paper-affiliation" style="text-align: center; font-size: 1.05em; margin-top: 8px; margin-bottom: 0;">
-                <sup>1</sup>Peking University &nbsp; 
-                <sup>2</sup>Eastern Institute of Technology, Ningbo &nbsp;
-                <sup>3</sup>Shanghai Jiao Tong University
-            </p>
         </header>
-
-        <div class="links-container" style="text-align: center; margin-top: -5px; margin-bottom: 38px;">
-            <a href="https://arxiv.org/pdf/2510.10742" target="_blank" style="font-size: 1.05em; color: #3498db; margin: 0 15px; text-decoration: none; transition: color 0.3s ease;">
-                <strong>[Paper]</strong>
-            </a>
-            <span style="font-size: 1.05em; color: #aaa; margin: 0 15px;">
-                [Code(coming soon)]
-            </span>
-            <a href="https://youtu.be/F6nlxRoq1W8" target="_blank" style="font-size: 1.05em; color: #3498db; margin: 0 15px; text-decoration: none; transition: color 0.3s ease;">
-                <strong>[Video]</strong>
-            </a>
-        </div>
 
         <section class="abstract">
             <h2>Abstract</h2>
-            <p>Virtual and augmented reality systems increasingly demand intelligent adaptation to user behaviors for enhanced interaction experiences. Achieving this requires accurately understanding human intentions and predicting future situated behaviors—such as gaze direction and object interactions—which is vital for creating responsive VR/AR environments and applications like personalized assistants. However, accurate behavioral prediction demands modeling the underlying cognitive processes that drive human-environment interactions. In this work, we introduce a hierarchical, intention-aware framework that models human intentions and predicts detailed situated behaviors by leveraging cognitive mechanisms. Given historical human dynamics and the observation of scene contexts, our framework first identifies potential interaction targets and forecasts fine-grained future behaviors. We propose a dynamic Graph Convolutional Network (GCN) to effectively capture human-environment relationships. Extensive experiments on challenging real-world benchmarks and live VR environment demonstrate the effectiveness of our approach, achieving superior performance across all metrics and enabling practical applications for proactive VR systems that anticipate user behaviors and adapt virtual environments accordingly.</p>
+            <p>Proactive VR/AR systems require predicting situated user behavior, including gaze, motion, and object interaction, from historical human dynamics and scene context. This is challenging because future behavior depends on both human intention and environmental structure. We present a hierarchical intention-aware framework for situated behavior prediction. The model first infers interaction intentions via a gaze-guided dynamic interaction graph and then predicts fine-grained future gaze, trajectory, and object interaction. Evaluation on two public benchmarks and a real-world VR experiment show that our framework produces accurate predictions under realistic conditions and supports proactive VR applications that anticipate user behavior and adapt interactions accordingly.</p>
         </section>
 
         <section class="pipeline">
@@ -115,21 +90,6 @@
                 <p class="video-caption">
                     In this example, the subject performs the action of drinking water.  Instead of merely following the motion trend of the coffee cup within the input, our model understands the human drinking action pattern: "pick up then put down." Consequently, it correctly predicts the coffee cup's future motion.
                 </p>
-            </div>
-        </section>
-
-        <section class="citation">
-            <h2>Citation</h2>
-            <div class="citation-container">
-                <pre id="bibtex">@misc{xu2025seeingfuturepredictingsituated,
-    title={Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality}, 
-    author={Yuan Xu and Zimu Zhang and Xiaoxuan Ma and Wentao Zhu and Yu Qiao and Yizhou Wang},
-    year={2025},
-    eprint={2510.10742},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV},
-    url={https://arxiv.org/abs/2510.10742}, 
-}</pre>
             </div>
         </section>
     </div>
