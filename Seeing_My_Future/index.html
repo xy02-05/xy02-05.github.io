@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seeing My Future: Predicting Situated Interaction Behavior in Virtual Reality</h1>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <p>Proactive VR/AR systems require predicting situated user behavior, including gaze, motion, and object interaction, from historical human dynamics and scene context. This is challenging because future behavior depends on both human intention and environmental structure. We present a hierarchical intention-aware framework for situated behavior prediction. The model first infers interaction intentions via a gaze-guided dynamic interaction graph and then predicts fine-grained future gaze, trajectory, and object interaction. Evaluation on two public benchmarks and a real-world VR experiment show that our framework produces accurate predictions under realistic conditions and supports proactive VR applications that anticipate user behavior and adapt interactions accordingly.</p>
+        </section>
+
+        <section class="pipeline">
+            <h2>Method Overview</h2>
+            <figure>
+                <img src="images/pipeline.png" alt="Method Pipeline" class="pipeline-image">
+                <figcaption class="text-left">
+                    <strong>Overview of our framework.</strong> (1) an observation encoding module that captures and encodes historical human states and scene context, (2) a hierarchical intention-aware decoding module that first predicts potential top K interaction targets and then forecasts detailed human next states as well as the object interactions, and (3) a dynamic GCN that adaptively models relationships among human gaze, head positions, hand positions, and objects.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="results">
+            <h2>Real World Experiment Results</h2>
+            <div class="video-grid">
+                <p class="video-caption">
+                    <strong>Real world experiments results.</strong> We present three different perspectives: an exocentric view, an egocentric view from the VR device, and the corresponding rendering result in Blender. In Blender, we use a <span style="color: #ffc92d">yellow</span> Lego figure to represent the ground truth and a <span style="color: #8fbbf6">blue</span> Lego figure for our prediction results. Simultaneously, the color of an object's bounding box represents the probability value output by our model. A color closer to <span style="color: #00ff00">green</span> indicates a higher probability that the model believes the object will be interacted with next. Conversely, a color closer to white indicates a lower probability of interaction.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos1.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos2.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos3.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos4.mp4" type="video/mp4">
+                </video>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/realworldvideos5.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2>Qualitative Video Results</h2>
+            <div class="video-grid">
+                <p class="video-caption">
+                    <strong>Qualitative results of our model on the ADT dataset.</strong> The visualization includes: (top-left) an egocentric RGB view for reference, (top-right) 3D visualization of interaction scenario, (bottom) wireframe representation of the environment with ground-truth and our predictions on human states and the interacted object states. Visual elements include human gaze direction (rays), human head position and orientation (pyramids), human hand positions (points), and the interacted objects (bounding boxes). <span style="color: #c04842">Red</span> elements represent the input and ground-truth, and <span style="color: #3b852b">green</span> bounding boxes represent the ground truth object interaction trajectory, while <span style="color: #4fadea">blue</span> elements and <span style="color: #4fadea">blue</span> bounding boxes represent the corresponding predictions. White bounding boxes indicate the top K objects selected by our interaction intention prediction module.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video1.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In the input clip, the subject's gaze sweeps over the coffee cup on the round stool while bending down and reaching for it. Our model can recognize and understand the subject's intention, identify the coffee cup as the next active object, and predict object motion trajectories similar to the ground truth.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video2.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In this example, there is a wide array of objects available on the table in front of the subject.  In the input clip, the subject is holding a wooden spoon in his right hand, and his left hand is approaching a bowl on the table, with accompanying eye gaze. Our model can accurately predict from the numerous objects that the wooden spoon in the right hand will remain in interaction, and simultaneously, the black bowl will become interactive next.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video3.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In the input clip, the subject's gaze is fixed at the drink on the table, and the trajectories of their head and hand are moving towards the drink. These cues effectively address the questions of 'where to look', 'where to go', and 'which object to interact with'. Based on this information, our model successfully understands the subject's intention and accurately predicts both the next active object and trajectories that closely align with the ground truth.
+                </p>
+                <hr>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video4.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    In this example, the subject performs the action of drinking water.  Instead of merely following the motion trend of the coffee cup within the input, our model understands the human drinking action pattern: "pick up then put down." Consequently, it correctly predicts the coffee cup's future motion.
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
