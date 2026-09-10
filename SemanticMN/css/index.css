@@ -118,7 +118,7 @@ body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
     color: var(--text-primary) !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 0.75rem !important;
     line-height: 1.1 !important;
 }
 
@@ -158,7 +158,7 @@ body {
     background: var(--background-accent);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    margin-top: 1rem;
+    margin-top: 0;
     display: inline-block;
 }
 
@@ -818,8 +818,7 @@ a:focus {
 }
 
 .publication-venue-wrapper {
-  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
 }
-
 
 
